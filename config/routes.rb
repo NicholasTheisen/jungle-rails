@@ -19,7 +19,11 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]  # New routes for admin/categories
   end
 
+  # Add routes for user registration, login, and logout
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
